@@ -1,27 +1,21 @@
-# Whattodo
+# WhatToDo?
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
+WhatToDo is a todo list web application to help you keep track of your tasks and tell you what you need to do to
+stay on track with your deadlines. It is a CLI (Command-Line Inteface) application for simple adding, editing and
+removing tasks without the need for a mouse.
 
-## Development server
+Head on over to //insert link to use the application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# User Interface
+WhatToDo uses a simple and clean user interface which does not distract from your important tasks.
+// insert UI image
 
-## Code scaffolding
+# Main functionalities (and command shortcut):
+1. Adding a task
+2. Editing a task - description and deadline
+3. Removing a task
+4. Adding images to tasks
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# User and Developer Guides
+For more information about the usage of WhatToDo, please view the WhatToDo User Guide //insert link.
+For more information about the development of WhatToDo, please view the WhatToDo Developer Guide //insert link.
