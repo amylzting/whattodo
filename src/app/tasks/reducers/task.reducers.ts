@@ -8,7 +8,7 @@ export const initialState: TasksState = taskAdapter.getInitialState({
   selectedTaskId: null,
 });
 
-const userReducer = createReducer(
+const reducer = createReducer(
     initialState,
     on(TaskActions.addTask, (state, { task }) => {
       return taskAdapter.addOne(task, state)
@@ -28,27 +28,5 @@ const userReducer = createReducer(
 );
 
 export function taskReducer(state: TasksState | undefined, action: Action) {
-  return userReducer(state, action);
+  return reducer(state, action);
 }
- 
-export const getSelectedTaskId = (state: TasksState) => state.selectedTaskId;
- 
-// get the selectors
-const {
-  selectIds,
-  selectEntities,
-  selectAll,
-  selectTotal,
-} = taskAdapter.getSelectors();
- 
-// select the array of task ids
-export const selectTaskIds = selectIds;
- 
-// select the dictionary of task entities
-export const selectTaskEntities = selectEntities;
- 
-// select the array of task entities
-export const selectAllTasks = selectAll;
- 
-// select the total number of task entities
-export const selectTaskTotal = selectTotal;
