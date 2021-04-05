@@ -1,17 +1,9 @@
-import { createReducer, on } from '@ngrx/store';
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { Task } from '../models/task.model';
-import * as TaskActions from '../actions/task.actions';
-// import { TasksState, tasksAdapter } from '@todos/states';
+import { Action, createReducer, on } from '@ngrx/store';
 
-export interface State extends EntityState<Task> {
-  // additional entities state properties
-  selectedTaskId: number | null;
-}
+import * as TaskActions from '../actions/task.actions';
+import { TasksState, taskAdapter } from '../states/task.state';
  
-export const taskAdapter: EntityAdapter<Task> = createEntityAdapter<Task>();
- 
-export const initialState: State = taskAdapter.getInitialState({
+export const initialState: TasksState = taskAdapter.getInitialState({
   // additional entity state properties
   selectedTaskId: null,
 });
@@ -34,3 +26,29 @@ const userReducer = createReducer(
       return taskAdapter.removeAll({ ...state, selectedTaskId: null });
     })
 );
+
+export function taskReducer(state: TasksState | undefined, action: Action) {
+  return userReducer(state, action);
+}
+ 
+export const getSelectedTaskId = (state: TasksState) => state.selectedTaskId;
+ 
+// get the selectors
+const {
+  selectIds,
+  selectEntities,
+  selectAll,
+  selectTotal,
+} = taskAdapter.getSelectors();
+ 
+// select the array of task ids
+export const selectTaskIds = selectIds;
+ 
+// select the dictionary of task entities
+export const selectTaskEntities = selectEntities;
+ 
+// select the array of task entities
+export const selectAllTasks = selectAll;
+ 
+// select the total number of task entities
+export const selectTaskTotal = selectTotal;
