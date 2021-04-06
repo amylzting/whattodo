@@ -35,6 +35,10 @@
 .todo-text {
   width: 65%;
   overflow-wrap: break-word;
+  &.completed {
+    text-decoration: line-through;
+    margin: 0;
+  }
 }
 
 .todo-item {
@@ -50,10 +54,6 @@
   border-bottom: 1px solid #f2f3f5;
   border-left: 1px solid #f2f3f5;
   border-radius: 0.2em;
-
-  &.completed {
-      color: #aaa;
-  }
 }
 
 .material-icons {
@@ -93,14 +93,22 @@
   i.material-icons {
       opacity: 0.28;
   }
+
+  &.completed {
+    i.material-icons {
+      opacity: 0.28;
+  }
+  }
 }
 
-.todo-item.completed .check-box {
-  background: rgb(11, 223, 170);
-  border-color: rgb(11, 223, 170);
-
-  i.material-icons {
-      opacity: 1;
+.todo-item .check-box {
+  &.completed {
+    background: rgb(144, 201, 187);
+    border-color: white;
+  
+    i.material-icons {
+        opacity: 1;
+    }
   }
 }
 
@@ -210,13 +218,15 @@ form.add-container {
 .edit-text {
   border: 0.5px solid grey;
   border-radius: 1em;
-  padding: 5px 15px;
   color: rgba(88, 87, 158, 0.952);
   font-size: 16px;
   /* transition: 0.4s; */
   line-height: 40px;
-  width: 70%;
+  width: 60%;
   outline: none;
+  margin: 0;
+  padding: 0 4%;
+  overflow-wrap: break-word;
 }
 
 .save-button {
@@ -230,6 +240,7 @@ form.add-container {
     opacity: 1;
   }
   margin-left: 1%;
+  cursor: pointer;
 }
 
 .cancel-button {
@@ -243,4 +254,11 @@ form.add-container {
     opacity: 1;
   }
   margin-left: 1%;
+  cursor: pointer;
+}
+
+.edit-form {
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }

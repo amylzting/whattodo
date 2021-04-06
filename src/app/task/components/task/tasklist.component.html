@@ -10,15 +10,22 @@
     <ol class="task-list" *ngIf="tasklist">
       <!-- task item -->
       <li class="todo-item" *ngFor="let task of tasklist | async">
+        
         <!-- check box for task completion   -->
-        <div class="check-box" (click)="onClickCompleted($event)">
+        <div *ngIf="!task.completed" class="check-box" (click)="toggleCompleteTask(task)">
             <i class="material-icons">check</i>
         </div>
+        <div *ngIf="task.completed" class="check-box completed" (click)="toggleCompleteTask(task)">
+          <i class="material-icons">check</i>
+      </div>
 
         <!-- Show task description when task is not being edited. -->
-        <div *ngIf="!task.editing" class="todo-text">
+        <div *ngIf="!task.editing && !task.completed" class="todo-text">
           {{ task.description }}
         </div>
+        <p *ngIf="!task.editing && task.completed" class="todo-text completed">
+          {{ task.description }}
+        </p>
         <!-- buttons for edit and delete -->
         <div *ngIf="!task.editing" class="task-controls-container" appToolTipSingleton (click)="$event.stopPropagation()">
           <!-- edit button   -->
@@ -32,11 +39,11 @@
         </div>
 
         <!-- Show text box for editing task description. -->
-        <input *ngIf="task.editing" type="text" class="edit-text" value={{task.description}} (keyup)="onKeyEdit($event)">    
-        <button *ngIf="task.editing" class="save-button" (click)=editTask(task)>Save</button>
-        <button *ngIf="task.editing" class="cancel-button" (click)=cancelEdit(task)>Cancel</button>
-       
-  
+        <form class="edit-form">
+          <input *ngIf="task.editing" type="text" (ngSubmit)="editTask(task)" class="edit-text" value={{task.description}} (keyup)="onKeyEdit($event)"> 
+          <button *ngIf="task.editing" type="submit" class="save-button" (click)=editTask(task)>Save</button>
+          <button *ngIf="task.editing" class="cancel-button" (click)=cancelEdit(task)>Cancel</button>
+        </form>
         
       </li>
     </ol>

@@ -37,7 +37,8 @@ export class TaskListComponent implements OnInit {
       const task: Task = {
         id: uuid(),
         description: this.newTaskDescription,
-        editing: false
+        editing: false,
+        completed: false
       };
       this.store.dispatch(TaskActions.addTask({task: task}));
       this.newTaskDescription = '';
@@ -80,6 +81,14 @@ export class TaskListComponent implements OnInit {
       changes: { editing: true }
     }
     this.store.dispatch(TaskActions.editTask({edit: editedTask}));
+  }
+
+  toggleCompleteTask(task: Task) {
+    const completedTask: Update<Task> = {
+      id: task.id,
+      changes: { completed: !task.completed }
+    }
+    this.store.dispatch(TaskActions.editTask({edit: completedTask}));
   }
 
   onKeyEdit(event) { this.editedTaskDescription = event.target.value;}
