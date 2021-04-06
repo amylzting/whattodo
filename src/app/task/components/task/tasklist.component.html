@@ -1,7 +1,7 @@
 <div class="tasklist-component-container">
   <!-- remove all tasks button -->
   <div class="removeall">
-    <button class="removeall-button" (click)="removeAllTasks()">Clear All Tasks</button>
+    <button class="removeall-button" (click)="removeAllTasks()">CLEAR</button>
   </div>
   <h1 class="title">What To Do?</h1>
   
@@ -52,7 +52,7 @@
   <div >
     <form class="add-container" (ngSubmit)="addTask()">
       <input type="text" class="add-text" [(ngModel)]="this.newTaskDescription" [ngModelOptions]="{standalone: true}" placeholder="Enter task description" />
-      <button type="submit" class="add-button">+</button>
+      <button type="submit" class="add-button"><i class="material-icons">forward</i></button>
     </form>
   </div>
     
