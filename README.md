@@ -14,7 +14,9 @@ WhatToDo uses a simple and clean user interface which does not distract from you
 1. Adding a task
 2. Editing a task - description and deadline
 3. Removing a task
-4. Adding images to tasks
+4. Add image to a task
+5. Mark a task as done
+6. Clear all tasks
 
 # User and Developer Guides
 For more information about the usage of WhatToDo, please view the WhatToDo User Guide //insert link.
