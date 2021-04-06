@@ -70,7 +70,8 @@
 
   margin-right: 5%;
 
-  width: 3%;
+  width: 1.5em;
+  height: 1.5em;
 
   transition: background-color 0.2s, border-color 0.2s;
 
@@ -138,11 +139,11 @@
   // display: flex;
   background: #f5f7f8;
 
-  padding: 0.5em 0.6em;
+  padding: 0.3em 0.4em;
 
   i.material-icons {
       color: #555;
-      font-size: 1.1em;
+      font-size: 1em;
   }
 
   &:hover {
