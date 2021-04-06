@@ -1,3 +1,42 @@
+.tasklist-component-container {
+  padding: 3% 10%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.removeall-button {
+  position: absolute;
+  right: 10%;
+  color: white;
+  border-radius: 1em;
+  border: 2px solid rgb(180, 179, 179);
+  background: rgb(229, 203, 155);
+  padding: 1%;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+  
+}
+
+.title {
+  display:flex;
+  justify-content: center;
+  margin: 0;
+}
+.task-list {
+  padding: 0;
+  width: 50%;
+}
+
+.todo-text {
+  width: 65%;
+  overflow-wrap: break-word;
+}
+
 .todo-item {
   display: flex;
   align-items: center;
@@ -6,9 +45,11 @@
   
   font-size: 18px;
 
-  padding: 35px 15px;
+  padding: 3% 7%;
 
   border-bottom: 1px solid #f2f3f5;
+  border-left: 1px solid #f2f3f5;
+  border-radius: 0.2em;
 
   &.completed {
       color: #aaa;
@@ -27,7 +68,7 @@
   border: 2px solid #eee;
   border-radius: 50%;
 
-  margin-right: 20px;
+  margin-right: 5%;
 
   height: 28px;
   width: 28px;
@@ -63,22 +104,22 @@
   }
 }
 
-.todo-item .todo-controls-box {
+.todo-item .task-controls-container {
   position: absolute;
   bottom: 0;
-  right: 5px;
+  right: 6%;
 
   display: flex;
 
-  // hide by default
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(2px);
+  // hide
+  // opacity: 0;
+  // visibility: hidden;
+  // transform: translateY(2px);
 
-  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+  // transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
 }
 
-.todo-item:hover .todo-controls-box {
+.todo-item:hover .task-controls-container {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.4s;
@@ -86,8 +127,8 @@
   transform: translateY(0);
 }
 
-.todo-controls-box .todo-control-button {
-  display: flex;
+.task-controls-container .task-control-button {
+  // display: flex;
   background: #f5f7f8;
 
   padding: 7px 10px;
@@ -118,10 +159,88 @@
   }
 }
 
-.todo-controls-box .todo-control-button.is-danger:hover i.material-icons {
+.task-controls-container .task-control-button.is-danger:hover i.material-icons {
   color: rgb(155, 27, 27);
 }
 
-.todo-controls-box .todo-control-button.is-danger:active i.material-icons {
+.task-controls-container .task-control-button.is-danger:active i.material-icons {
   color: rgb(189, 37, 37);
+}
+
+.add-container {
+  height: 20%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.add-button {
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 1em;
+  border: 2px solid rgb(180, 179, 179);
+  background: rgb(229, 203, 155);
+  font-size: larger;
+  text-decoration: none;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.add-text {
+  border: 0.5px solid grey;
+  border-radius: 1em;
+  padding: 7px 25px;
+  color: rgba(88, 87, 158, 0.952);
+  font-size: 16px;
+  /* transition: 0.4s; */
+  line-height: 40px;
+  width: 40%;
+  outline: none;
+  margin-right: 1%;
+}
+
+form.add-container {
+  align-items: center;
+  align-content: center;
+}
+
+.edit-text {
+  border: 0.5px solid grey;
+  border-radius: 1em;
+  padding: 5px 15px;
+  color: rgba(88, 87, 158, 0.952);
+  font-size: 16px;
+  /* transition: 0.4s; */
+  line-height: 40px;
+  width: 70%;
+  outline: none;
+}
+
+.save-button {
+  color: white;
+  border-radius: 0.5em;
+  border: 1px solid rgb(180, 179, 179);
+  background: rgb(229, 203, 155);
+  padding: 2%;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+  margin-left: 1%;
+}
+
+.cancel-button {
+  color: white;
+  border-radius: 0.5em;
+  border: 1px solid rgb(180, 179, 179);
+  background: rgb(229, 203, 155);
+  padding: 2%;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+  margin-left: 1%;
 }

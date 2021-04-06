@@ -1,42 +1,52 @@
-<div class="container">
-  <h1>My to-do's list</h1>
+<div class="tasklist-component-container">
+  <!-- remove all tasks button -->
+  <div class="removeall">
+    <button class="removeall-button" (click)="removeAllTasks()">Clear All Tasks</button>
+  </div>
+  <h1 class="title">What To Do?</h1>
+  
+  <div class="container">
+    <!-- task list -->
+    <ol class="task-list" *ngIf="tasklist">
+      <!-- task item -->
+      <li class="todo-item" *ngFor="let task of tasklist | async">
+        <!-- check box for task completion   -->
+        <div class="check-box" (click)="onClickCompleted($event)">
+            <i class="material-icons">check</i>
+        </div>
 
-
-  <ol class="list-group" *ngIf="tasklist">
-    <li class="list-group-item" *ngFor="let task of tasklist | async">
-      <div class="search-box">
-          
-        <div class="todo-item">
-          <div class="check-box" (click)="onClickCompleted($event)">
-              <i class="material-icons">check</i>
+        <!-- Show task description when task is not being edited. -->
+        <div *ngIf="!task.editing" class="todo-text">
+          {{ task.description }}
+        </div>
+        <!-- buttons for edit and delete -->
+        <div *ngIf="!task.editing" class="task-controls-container" appToolTipSingleton (click)="$event.stopPropagation()">
+          <!-- edit button   -->
+          <div class="task-control-button" appToolTip="Edit Task" (click)="setEdit(task);">
+                <i class="material-icons">edit</i>
           </div>
-
-          <div *ngIf="!task.editing" class="todo-text">
-            {{ task.description }}
-          </div>
-          <div *ngIf="task.editing" class="todo-text">
-            <input type="text" value={{task.description}} (keyup)="onKeyEdit($event)">
-            <button (click)=editTask(task)>Save</button>
-            <button (click)=cancelEdit(task)>Cancel</button>
-          </div>
-
-          <div class="todo-controls-box" appToolTipSingleton (click)="$event.stopPropagation()">
-              <div class="todo-control-button" appToolTip="Edit Todo" (click)="setEdit(task);">
-                  <i class="material-icons">edit</i>
-              </div>
-
-              <div class="todo-control-button is-danger" appToolTip="Delete Todo" (click)="removeTask(task.id)">
-                  <i class="material-icons">delete</i>
-              </div>
+          <!-- delete button -->
+          <div class="task-control-button is-danger" appToolTip="Delete Task" (click)="removeTask(task.id)">
+                <i class="material-icons">delete</i>
           </div>
         </div>
-      </div>
-    </li>
-  </ol>
-</div>
 
-<form (ngSubmit)="addTask()">
-  <input type="text" [(ngModel)]="this.newTaskDescription" [ngModelOptions]="{standalone: true}" placeholder="Enter task description" />
-  <button type="submit">+</button>
-</form>
-<button (click)="removeAllTasks()">Clear all tasks</button>
+        <!-- Show text box for editing task description. -->
+        <input *ngIf="task.editing" type="text" class="edit-text" value={{task.description}} (keyup)="onKeyEdit($event)">    
+        <button *ngIf="task.editing" class="save-button" (click)=editTask(task)>Save</button>
+        <button *ngIf="task.editing" class="cancel-button" (click)=cancelEdit(task)>Cancel</button>
+       
+  
+        
+      </li>
+    </ol>
+  </div>
+  
+  <div >
+    <form class="add-container" (ngSubmit)="addTask()">
+      <input type="text" class="add-text" [(ngModel)]="this.newTaskDescription" [ngModelOptions]="{standalone: true}" placeholder="Enter task description" />
+      <button type="submit" class="add-button">+</button>
+    </form>
+  </div>
+    
+</div>
