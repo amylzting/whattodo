@@ -37,16 +37,18 @@ export class TasksSyncStorageService {
 
   private loadFromStorage() {
     const storageState = localStorage.getItem(TASKLIST_LOCALSTORAGE_KEY);
-    const taskEntities = JSON.parse(storageState)["entities"];
+    if (storageState) {
+      const taskEntities = JSON.parse(storageState)["entities"];
 
-    function isEmpty(ob){
+      function isEmpty(ob){
         for(var i in ob){ return false;}
-       return true;
-     }
-    if(!isEmpty(taskEntities)) {
-        this.store$.dispatch(TaskActions.loadTasks({
-            tasks: JSON.parse(JSON.stringify(Object.values(taskEntities)))
-        }));
+        return true;
+      }
+      if(!isEmpty(taskEntities)) {
+          this.store$.dispatch(TaskActions.loadTasks({
+              tasks: JSON.parse(JSON.stringify(Object.values(taskEntities)))
+          }));
+      }
     }
     
   }
