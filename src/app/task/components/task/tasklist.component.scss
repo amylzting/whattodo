@@ -8,8 +8,6 @@
 }
 
 .removeall-button {
-  display: flex;
-  justify-content: right;
   right: 10%;
   border-radius: 0.5em;
   border: 0.5px solid rgb(180, 179, 179);
@@ -19,7 +17,8 @@
   &:hover {
     opacity: 1;
   }
-  
+  position: fixed;
+  cursor: pointer;
 }
 
 .title {
