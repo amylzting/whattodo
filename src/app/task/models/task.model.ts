@@ -3,4 +3,5 @@ export interface Task {
     description: string;
     editing: boolean;
     completed: boolean;
+    imageUrl: string;
   }

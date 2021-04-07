@@ -17,16 +17,21 @@
         </div>
         <div *ngIf="task.completed" class="check-box completed" (click)="toggleCompleteTask(task)">
           <i class="material-icons">check</i>
-      </div>
+        </div>
+
+        <!-- Show image for task if there is image -->
+        <img *ngIf="!(task.imageUrl == '')" class="task-image" src={{task.imageUrl}}/>
 
         <!-- Show task description when task is not being edited. -->
         <div *ngIf="!task.editing && !task.completed" class="todo-text">
           {{ task.description }}
         </div>
-        <p *ngIf="!task.editing && task.completed" class="todo-text completed">
+        <div *ngIf="!task.editing && task.completed" class="todo-text completed">
           {{ task.description }}
-        </p>
-        <!-- buttons for edit and delete -->
+        </div>
+        
+
+        <!-- Edit and Delete task buttons -->
         <div *ngIf="!task.editing" class="task-controls-container" appToolTipSingleton (click)="$event.stopPropagation()">
           <!-- edit button   -->
           <div class="task-control-button" appToolTip="Edit Task" (click)="setEdit(task);">
@@ -36,6 +41,11 @@
           <div class="task-control-button is-danger" appToolTip="Delete Task" (click)="removeTask(task.id)">
                 <i class="material-icons">delete</i>
           </div>
+          <!-- image upload button -->
+          <label for="file" class="task-control-button" appToolTip="Upload Image">
+            <i class="material-icons">image</i>
+            <input type="file" (change)="addImage($event, task)" id="file" style="display: none" name="image" accept="image/gif,image/jpeg,image/jpg,image/png" multiple="" data-original-title="upload photos">
+          </label>
         </div>
 
         <!-- Show text box for editing task description. -->
