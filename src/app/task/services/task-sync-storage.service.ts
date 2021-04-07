@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {TasksState} from '../states/task.state';
 import {tasksFeatureSelector} from '../selectors/task.selectors';
-import {filter, take} from 'rxjs/operators';
+import {filter} from 'rxjs/operators';
 import * as TaskActions from '../actions/task.actions';
-import { Task } from '../models';
 
 export const TASKLIST_LOCALSTORAGE_KEY = 'tasklist';
 

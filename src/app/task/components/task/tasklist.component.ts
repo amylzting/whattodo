@@ -23,6 +23,7 @@ export class TaskListComponent implements OnInit {
   
   @Input() newTaskDescription: string
   @Input() editedTaskDescription: string
+  imgAsDataUrl: string
 
   constructor(private store: Store<TasksState>, private syncStorage: TasksSyncStorageService) {}
 
@@ -38,7 +39,8 @@ export class TaskListComponent implements OnInit {
         id: uuid(),
         description: this.newTaskDescription,
         editing: false,
-        completed: false
+        completed: false,
+        imageUrl: ''
       };
       this.store.dispatch(TaskActions.addTask({task: task}));
       this.newTaskDescription = '';
@@ -92,5 +94,22 @@ export class TaskListComponent implements OnInit {
   }
 
   onKeyEdit(event) { this.editedTaskDescription = event.target.value;}
+
+  addImage(event, task: Task) {
+    if(event.target.files) {
+      var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload=(e:any)=>{
+        this.imgAsDataUrl = e.target.result;
+        const taskWithImage: Update<Task> = {
+          id: task.id,
+          changes: { imageUrl: this.imgAsDataUrl }
+        }
+        this.store.dispatch(TaskActions.editTask({edit: taskWithImage}));
+        console.log(this.imgAsDataUrl);
+        this.imgAsDataUrl = '';
+      }
+    }
+  }
 
 }
