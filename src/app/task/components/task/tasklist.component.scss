@@ -1,3 +1,21 @@
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  body {
+    padding: 8% 5%;
+    .task-list {
+      padding: 0;
+      width: 75%;
+    }
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  body {
+    padding: 8% 5%;
+  }
+}
+
 .tasklist-component-container {
   padding: 3% 10%;
 }
