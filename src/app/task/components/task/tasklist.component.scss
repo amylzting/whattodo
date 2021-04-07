@@ -7,23 +7,30 @@
   justify-content: center;
   // margin: 5% 30%;
   // padding: 25px;
-  border: 2px solid rgb(96, 107, 194);
-  border-radius: 15px;
-  box-shadow: 0 0 3px black;
+  // border: 2px solid rgb(96, 107, 194);
+  // border-radius: 15px;
+  // box-shadow: 0 0 3px black;
 }
 
 .removeall-button {
   right: 10%;
-  border-radius: 0.5em;
-  border: 0.5px solid rgb(180, 179, 179);
-  background: #f5f7f8;
+  color: white;
+  // border-radius: 0.5em;
+  border: 2px solid rgb(80, 39, 39);
+  padding: 0.5%;
+  background: rgba(216, 108, 108, 0.5);
   padding: 1%;
   opacity: 0.9;
   &:hover {
     opacity: 1;
   }
-  position: fixed;
+  // position: relative;
   cursor: pointer;
+}
+
+.removeall {
+  display: flex;
+  justify-content: center;
 }
 
 .title {
@@ -31,9 +38,10 @@
   justify-content: center;
   margin: 0;
 }
+
 .task-list {
   padding: 0;
-  width: 80%;
+  width: 60%;
 }
 
 .todo-text {
@@ -48,20 +56,26 @@
 .todo-item {
   display: flex;
   align-items: center;
-
-  position: relative;
-  
   font-size: 18px;
+  position: relative;
 
-  padding: 3% 7%;
+  padding: 2% 5%;
 
   border-bottom: 1px solid #f2f3f5;
   border-left: 1px solid #f2f3f5;
+
+  // background: rgba(0, 0 , 0 ,0.5);
+  background: rgba(148, 87, 87, 0.5);
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .task-image {
-  width: 3em;
+  width: 4em;
   height: 3em;
+  margin-right: 2%;
 }
 
 .material-icons {
@@ -146,6 +160,10 @@
 .task-controls-container .task-control-button {
   // display: flex;
   background: #f5f7f8;
+  // border: 1px solid rgb(80, 39, 39);
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+
 
   padding: 0.3em 0.4em;
 
@@ -166,13 +184,13 @@
       background: #e5e7e8;
   }
 
-  &:first-of-type {
-      border-top-left-radius: 7px;
-  }
+  // &:first-of-type {
+  //     border-top-left-radius: 7px;
+  // }
 
-  &:last-of-type {
-      border-top-right-radius: 7px;
-  }
+  // &:last-of-type {
+  //     border-top-right-radius: 7px;
+  // }
 }
 
 .task-controls-container .task-control-button.is-danger:hover i.material-icons {
@@ -192,26 +210,26 @@
 
 .add-button {
   color: white;
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 0.5em;
-  border: 2px solid rgb(211, 205, 205);
-  background: rgb(229, 203, 155);
+  // border-radius: 0.5em;
+  border: 2px solid rgb(80, 39, 39);
+  padding: 0.5%;
+  background: rgba(216, 108, 108, 0.5);
   text-decoration: none;
   opacity: 0.9;
   &:hover {
     opacity: 1;
   }
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  // display: flex;
+  // justify-content: center;
+  // align-content: center;
 }
 
 .add-text {
-  border: 0.5px solid grey;
-  border-radius: 1em;
+  border: 2px solid rgb(80, 39, 39);
+  border-radius: 0.5em;
   padding: 7px 25px;
-  color: rgba(88, 87, 158, 0.952);
+  // color: rgba(88, 87, 158, 0.952);
+  color: rgb(80, 39, 39);
   font-size: 16px;
   /* transition: 0.4s; */
   line-height: 40px;

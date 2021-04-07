@@ -1,14 +1,18 @@
 <div class="tasklist-component-container">
   <!-- remove all tasks button -->
-  <div class="removeall">
-    <button class="removeall-button" (click)="removeAllTasks()">CLEAR</button>
-  </div>
-  <h1 class="title">What To Do?</h1>
   
+  <h1 class="title">What To Do?</h1>
+  <div >
+    <form class="add-container" (ngSubmit)="addTask()">
+      <input type="text" class="add-text" [(ngModel)]="this.newTaskDescription" [ngModelOptions]="{standalone: true}" placeholder="Add a task!" />
+      <button type="submit" class="add-button"><i class="material-icons">forward</i></button>
+    </form>
+  </div>
   <div class="container">
     <!-- task list -->
     <ol class="task-list" *ngIf="tasklist">
       <!-- task item -->
+
       <li class="todo-item" *ngFor="let task of tasklist | async">
         
         <!-- check box for task completion   -->
@@ -31,21 +35,21 @@
         </div>
         
 
-        <!-- Edit and Delete task buttons -->
+        <!-- Edit, delete, add image to task buttons -->
         <div *ngIf="!task.editing" class="task-controls-container" appToolTipSingleton (click)="$event.stopPropagation()">
           <!-- edit button   -->
           <div class="task-control-button" appToolTip="Edit Task" (click)="setEdit(task);">
                 <i class="material-icons">edit</i>
-          </div>
-          <!-- delete button -->
-          <div class="task-control-button is-danger" appToolTip="Delete Task" (click)="removeTask(task.id)">
-                <i class="material-icons">delete</i>
           </div>
           <!-- image upload button -->
           <label for="file" class="task-control-button" appToolTip="Upload Image">
             <i class="material-icons">image</i>
             <input type="file" (change)="addImage($event, task)" id="file" style="display: none" name="image" accept="image/gif,image/jpeg,image/jpg,image/png" multiple="" data-original-title="upload photos">
           </label>
+          <!-- delete button -->
+          <div class="task-control-button is-danger" appToolTip="Delete Task" (click)="removeTask(task.id)">
+                <i class="material-icons">delete</i>
+          </div>
         </div>
 
         <!-- Show text box for editing task description. -->
@@ -58,12 +62,11 @@
       </li>
     </ol>
   </div>
-  
-  <div >
-    <form class="add-container" (ngSubmit)="addTask()">
-      <input type="text" class="add-text" [(ngModel)]="this.newTaskDescription" [ngModelOptions]="{standalone: true}" placeholder="Add a task!" />
-      <button type="submit" class="add-button"><i class="material-icons">forward</i></button>
-    </form>
+  <div class="removeall">
+    <button class="removeall-button" (click)="removeAllTasks()">CLEAR ALL</button>
   </div>
+  
+  
+  
   
 </div>
