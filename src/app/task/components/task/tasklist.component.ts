@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, Directive, ViewChild, ElementRef} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
 import { Observable } from 'rxjs';
@@ -20,16 +20,21 @@ import {TasksSyncStorageService} from '../../services/task-sync-storage.service'
 export class TaskListComponent implements OnInit {
   tasklist: Observable<any>
 
-  
+  // @ViewChild('canvas', { static: true }) 
+  // canvas: ElementRef<HTMLCanvasElement>;
+    
   @Input() newTaskDescription: string
   @Input() editedTaskDescription: string
-  imgAsDataUrl: string
+  imgAsDataUrl = new Array<string>();
+  uploadingIds = new Array<number>();
+  // private context: CanvasRenderingContext2D;
 
   constructor(private store: Store<TasksState>, private syncStorage: TasksSyncStorageService) {}
 
   ngOnInit(): void {
     this.tasklist = this.store.select(taskSelector.selectAllTasks);
     this.syncStorage.init();
+    // this.context = this.canvas.nativeElement.getContext('2d');
     
   }
 
@@ -78,6 +83,7 @@ export class TaskListComponent implements OnInit {
   }
 
   setEdit(task: Task) {
+    console.log("task desc: " + task.id);
     const editedTask: Update<Task> = {
       id: task.id,
       changes: { editing: true }
@@ -95,20 +101,23 @@ export class TaskListComponent implements OnInit {
 
   onKeyEdit(event) { this.editedTaskDescription = event.target.value;}
 
-  addImage(event, task: Task) {
+  setUploading(task: Task) {
+    this.uploadingIds.push(task.id);
+  }
+
+  addImage(event) {
     if(event.target.files) {
       var reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
       reader.onload=(e:any)=>{
-        this.imgAsDataUrl = e.target.result;
+        this.imgAsDataUrl.push(e.target.result);
         const taskWithImage: Update<Task> = {
-          id: task.id,
-          changes: { imageUrl: this.imgAsDataUrl }
+          id: this.uploadingIds.shift(),
+          changes: { imageUrl: this.imgAsDataUrl.shift() }
         }
         this.store.dispatch(TaskActions.editTask({edit: taskWithImage}));
-        console.log(this.imgAsDataUrl);
-        this.imgAsDataUrl = '';
       }
+
+      reader.readAsDataURL(event.target.files[0]);
     }
   }
 

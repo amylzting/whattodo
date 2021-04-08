@@ -8,7 +8,7 @@ global styles or style files
 }
 
 body {
-  background-image: url('../images/light-bulb.jpg');
+  background-image: url('images/min.jpg');
   /* Full height */
   height: 100%;
 

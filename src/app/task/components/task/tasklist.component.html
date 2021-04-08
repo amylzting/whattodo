@@ -25,6 +25,7 @@
 
         <!-- Show image for task if there is image -->
         <img *ngIf="!(task.imageUrl == '')" class="task-image" src={{task.imageUrl}}/>
+        <!-- <canvas #canvas width="600" height="300"></canvas> -->
 
         <!-- Show task description when task is not being edited. -->
         <div *ngIf="!task.editing && !task.completed" class="todo-text">
@@ -42,9 +43,9 @@
                 <i class="material-icons">edit</i>
           </div>
           <!-- image upload button -->
-          <label for="file" class="task-control-button" appToolTip="Upload Image">
+          <label for="file" class="task-control-button" appToolTip="Upload Image" (click)="setUploading(task)">
             <i class="material-icons">image</i>
-            <input type="file" (change)="addImage($event, task)" id="file" style="display: none" name="image" accept="image/gif,image/jpeg,image/jpg,image/png" multiple="" data-original-title="upload photos">
+            <input type="file" (change)="addImage($event)" id="file" style="display: none" name="image" accept="image/gif,image/jpeg,image/jpg,image/png" multiple="" data-original-title="upload photos">
           </label>
           <!-- delete button -->
           <div class="task-control-button is-danger" appToolTip="Delete Task" (click)="removeTask(task.id)">
