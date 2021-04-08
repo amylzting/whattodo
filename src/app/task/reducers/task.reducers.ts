@@ -3,6 +3,7 @@ import { Action, createReducer, on } from '@ngrx/store';
 import * as TaskActions from '../actions/task.actions';
 import { TasksState, taskAdapter, initialState } from '../states/task.state';
 
+// create reducer for handling task actions and state transitions
 const reducer = createReducer(
     initialState,
     on(TaskActions.addTask, (state, { task }) => {

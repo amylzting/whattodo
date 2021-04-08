@@ -3,14 +3,14 @@
 WhatToDo is a **to-do list application** to help you keep track of tasks to do.
 It **optimizes planning and organization of tasks** including **editing tasks, adding images and marking task completion** with a simple and clean graphical user interface (GUI).
 
-Head on over to the [WhatToDo](https://amylzting.github.io/whattodo/).
+Head on over to [WhatToDo](https://amylzting.github.io/whattodo/).
 
 # User Interface
 WhatToDo uses a simple and clean user interface which does not distract from your important tasks.
 ![GUI_component](docs/images/whattodo_home.png)
 ![tasks](docs/images/before_delete_all.png)
 
-# Main functionalities (and command shortcut):
+# Main functionalities
 1. Adding a task
 2. Editing a task
 3. Removing a task

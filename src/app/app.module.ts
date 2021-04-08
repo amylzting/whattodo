@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 
-import { StoreModule } from '@ngrx/store';
-// import { TasksModule } from './tasks/tasks.module';
 import { reducers } from './reducers'
 import { TaskModule } from './task/task.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { taskReducer } from './tasks/reducers/task.reducers';
-// import { TaskComponent } from './tasks/components/task/task.component';
 
 @NgModule({
   declarations: [

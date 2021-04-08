@@ -1,7 +1,7 @@
 import { TasksState, taskAdapter } from '../states/task.state';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
    
-  // export const getSelectedTaskId = (state: TasksState) => state.selectedTaskId;
+// create selector for obtaining slices of store state for tasks
 export const tasksFeatureSelector = createFeatureSelector<TasksState>('tasks');
 
   // get the selectors

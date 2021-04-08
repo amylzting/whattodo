@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterViewInit, Directive, ViewChild, ElementRef} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
 import { Observable } from 'rxjs';
@@ -19,25 +19,21 @@ import {TasksSyncStorageService} from '../../services/task-sync-storage.service'
 
 export class TaskListComponent implements OnInit {
   tasklist: Observable<any>
-
-  // @ViewChild('canvas', { static: true }) 
-  // canvas: ElementRef<HTMLCanvasElement>;
     
   @Input() newTaskDescription: string
   @Input() editedTaskDescription: string
   imgAsDataUrl = new Array<string>();
   uploadingIds = new Array<number>();
-  // private context: CanvasRenderingContext2D;
 
   constructor(private store: Store<TasksState>, private syncStorage: TasksSyncStorageService) {}
 
   ngOnInit(): void {
     this.tasklist = this.store.select(taskSelector.selectAllTasks);
-    this.syncStorage.init();
-    // this.context = this.canvas.nativeElement.getContext('2d');
-    
+    // sync for local storage
+    this.syncStorage.init();  
   }
 
+  // handler for adding a task, unique id is created for each task
   addTask() {
     if (this.newTaskDescription != '') {
       const task: Task = {
@@ -52,14 +48,27 @@ export class TaskListComponent implements OnInit {
     }
   }
 
+  // handler for removing a task
   removeTask(id: number) {
     this.store.dispatch(TaskActions.removeTask({id: id}));
   }
 
+  // handler for removing all tasks
   removeAllTasks() {
     this.store.dispatch(TaskActions.clearTasks());
   }
 
+  // sets task attribute:editing to true
+  setEdit(task: Task) {
+    console.log("task desc: " + task.id);
+    const editedTask: Update<Task> = {
+      id: task.id,
+      changes: { editing: true }
+    }
+    this.store.dispatch(TaskActions.editTask({edit: editedTask}));
+  }
+
+  // handler for cancelling task edit, sets task attribute:editing to false
   cancelEdit(task: Task){
     const editedTask: Update<Task> = {
       id: task.id,
@@ -69,6 +78,7 @@ export class TaskListComponent implements OnInit {
     this.editedTaskDescription = '';
   }
 
+  // handler for editing task
   editTask(task:Task) {
     if (this.editedTaskDescription != '') {
         const editedTask: Update<Task> = {
@@ -82,15 +92,7 @@ export class TaskListComponent implements OnInit {
     }
   }
 
-  setEdit(task: Task) {
-    console.log("task desc: " + task.id);
-    const editedTask: Update<Task> = {
-      id: task.id,
-      changes: { editing: true }
-    }
-    this.store.dispatch(TaskActions.editTask({edit: editedTask}));
-  }
-
+  // handler for task completion or non-completion
   toggleCompleteTask(task: Task) {
     const completedTask: Update<Task> = {
       id: task.id,
@@ -99,12 +101,15 @@ export class TaskListComponent implements OnInit {
     this.store.dispatch(TaskActions.editTask({edit: completedTask}));
   }
 
+  // listens to edit event and gets edit text
   onKeyEdit(event) { this.editedTaskDescription = event.target.value;}
 
+  // stores id of task to upload image
   setUploading(task: Task) {
     this.uploadingIds.push(task.id);
   }
 
+  // handler for uploading image for task
   addImage(event) {
     if(event.target.files) {
       var reader = new FileReader();

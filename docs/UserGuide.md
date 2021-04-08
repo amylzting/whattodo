@@ -111,6 +111,7 @@ Either save:
 ![after_edit_save](images/after_edit_save.png)
 
 Or cancel:
+
 **After clicking Cancel**
 
 ![after_edit_cancel](images/before_delete_all.png)
