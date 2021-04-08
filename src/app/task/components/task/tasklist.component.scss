@@ -1,3 +1,20 @@
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  body {
+    padding: 8% 5%;
+    .task-list {
+      padding: 0;
+      width: 75%;
+    }
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  body {
+    padding: 8% 5%;
+  }
+}
 
 .tasklist-component-container {
   padding: 5% 10%;
@@ -57,7 +74,6 @@
   position: relative;
 
   padding: 2% 5%;
-  padding-bottom: 5%;
 
   border-bottom: 1px solid #f2f3f5;
   border-left: 1px solid #f2f3f5;
@@ -73,7 +89,7 @@
 .task-image {
   width: 4em;
   height: 3em;
-  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .material-icons {
@@ -136,6 +152,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
+
   display: flex;
 }
 
