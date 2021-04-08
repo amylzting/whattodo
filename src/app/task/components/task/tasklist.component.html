@@ -14,18 +14,14 @@
       <!-- task item -->
 
       <li class="todo-item" *ngFor="let task of tasklist | async">
-        
+
         <!-- check box for task completion   -->
         <div *ngIf="!task.completed" class="check-box" (click)="toggleCompleteTask(task)">
-            <i class="material-icons">check</i>
+          <i class="material-icons">check</i>
         </div>
         <div *ngIf="task.completed" class="check-box completed" (click)="toggleCompleteTask(task)">
           <i class="material-icons">check</i>
         </div>
-
-        <!-- Show image for task if there is image -->
-        <img *ngIf="!(task.imageUrl == '')" class="task-image" src={{task.imageUrl}}/>
-        <!-- <canvas #canvas width="600" height="300"></canvas> -->
 
         <!-- Show task description when task is not being edited. -->
         <div *ngIf="!task.editing && !task.completed" class="todo-text">
@@ -34,8 +30,10 @@
         <div *ngIf="!task.editing && task.completed" class="todo-text completed">
           {{ task.description }}
         </div>
-        
 
+        <!-- Show image for task if there is image -->
+        <img *ngIf="!(task.imageUrl == '')" class="task-image" src={{task.imageUrl}}/>
+        
         <!-- Edit, delete, add image to task buttons -->
         <div *ngIf="!task.editing" class="task-controls-container" appToolTipSingleton (click)="$event.stopPropagation()">
           <!-- edit button   -->
@@ -66,8 +64,5 @@
   <div class="removeall">
     <button class="removeall-button" (click)="removeAllTasks()">CLEAR ALL</button>
   </div>
-  
-  
-  
   
 </div>
