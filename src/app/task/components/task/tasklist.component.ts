@@ -14,7 +14,7 @@ import {TasksSyncStorageService} from '../../services/task-sync-storage.service'
 @Component({
   selector: 'tasklist',
   templateUrl: './tasklist.component.html',
-  styleUrls: ['./tasklist.component.scss']
+  styleUrls: ['./tasklist.component.scss', './mobile-tasklist.component.scss']
 })
 
 export class TaskListComponent implements OnInit {

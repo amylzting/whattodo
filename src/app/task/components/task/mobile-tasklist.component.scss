@@ -1,0 +1,273 @@
+/* Mobile Styles */
+@media only screen and (min-width: 320px) and (max-width: 450px) {
+    .tasklist-component-container {
+        padding: 5% 10%;
+      }
+      
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .removeall-button {
+        right: 10%;
+        color: white;
+        // border-radius: 0.5em;
+        border: 2px solid rgb(80, 39, 39);
+        padding: 0.5%;
+        background: rgba(216, 108, 108, 0.5);
+        padding: 1%;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+        // position: relative;
+        cursor: pointer;
+      }
+      
+      .removeall {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .title {
+        display:flex;
+        justify-content: center;
+        margin: 0;
+      }
+      
+      .task-list {
+        padding: 0;
+        width: 100%;
+      }
+      
+      .todo-text {
+        width: 60%;
+        overflow-wrap: break-word;
+        &.completed {
+          text-decoration: line-through;
+          color: rgb(94, 86, 86);
+          margin: 0;
+        }
+      }
+      
+      .todo-item {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        position: relative;
+      
+        padding: 2% 5%;
+        padding-bottom: 15%;
+      
+        border-bottom: 1px solid #f2f3f5;
+        border-left: 1px solid #f2f3f5;
+      
+        // background: rgba(0, 0 , 0 ,0.5);
+        background: rgba(148, 87, 87, 0.5);
+      
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      
+      .task-image {
+        width: 3em;
+        height: 2em;
+        margin-right: 2%;
+      }
+      
+      .material-icons {
+        cursor: pointer;
+      }
+      
+      .todo-item .check-box {
+        display: flex;
+      
+        flex-shrink: 0;
+        
+        border: 2px solid #eee;
+        border-radius: 50%;
+      
+        margin-right: 5%;
+      
+        width: 1.5em;
+        height: 1.5em;
+      
+        transition: background-color 0.2s, border-color 0.2s;
+      
+        i.material-icons {
+            font-size: 1em;
+            margin: auto;
+      
+            color: #333;
+            
+            // hide by default
+            opacity: 0;
+      
+            transition: opacity 0.2s;
+        }
+      }
+      
+      .todo-item:hover .check-box {
+        background: #eee;
+        i.material-icons {
+            opacity: 0.28;
+        }
+      
+        &.completed {
+          i.material-icons {
+            opacity: 0.28;
+        }
+        }
+      }
+      
+      .todo-item .check-box {
+        &.completed {
+          background: rgb(144, 201, 187);
+          border-color: white;
+        
+          i.material-icons {
+              opacity: 1;
+          }
+        }
+      }
+      
+      .todo-item .task-controls-container {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      
+        display: flex;
+      }
+      
+      .todo-item:hover .task-controls-container {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.4s;
+      
+        transform: translateY(0);
+      }
+      
+      .task-controls-container .task-control-button {
+        // display: flex;
+        background: #f5f7f8;
+        // border: 1px solid rgb(80, 39, 39);
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+      
+      
+        padding: 0.3em 0.4em;
+      
+        i.material-icons {
+            color: #555;
+            font-size: 1em;
+        }
+      
+        &:hover {
+            background: #eee;
+      
+            i.material-icons {
+                color: #333;
+            }
+        }
+      
+        &:active {
+            background: #e5e7e8;
+        }
+      
+      }
+      
+      .task-controls-container .task-control-button.is-danger:hover i.material-icons {
+        color: rgb(155, 27, 27);
+      }
+      
+      .task-controls-container .task-control-button.is-danger:active i.material-icons {
+        color: rgb(189, 37, 37);
+      }
+      
+      .add-container {
+        height: 20%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+      
+      .add-button {
+        color: white;
+        // border-radius: 0.5em;
+        border: 2px solid rgb(80, 39, 39);
+        padding: 0.5%;
+        background: rgba(216, 108, 108, 0.5);
+        text-decoration: none;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      
+      .add-text {
+        border: 2px solid rgb(80, 39, 39);
+        border-radius: 0.5em;
+        padding: 7px 25px;
+        color: rgb(80, 39, 39);
+        font-size: 16px;
+        line-height: 40px;
+        width: 40%;
+        outline: none;
+        margin-right: 1%;
+      }
+      
+      form.add-container {
+        align-items: center;
+        align-content: center;
+      }
+      
+      .edit-text {
+        border: 2px solid rgb(80, 39, 39);
+        border-radius: 1em;
+        color: rgb(80, 39, 39);
+        font-size: 16px;
+        /* transition: 0.4s; */
+        line-height: 40px;
+        width: 60%;
+        outline: none;
+        margin: 0;
+        padding: 0 4%;
+        overflow-wrap: break-word;
+      }
+      
+      .save-button {
+        color: white;
+        border-radius: 0.5em;
+        border: 1.5px solid rgb(80, 39, 39);
+        background: rgba(216, 108, 108, 0.5);
+        padding: 2%;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+        margin-left: 1%;
+        cursor: pointer;
+      }
+      
+      .cancel-button {
+        color: white;
+        border-radius: 0.5em;
+        border: 1.5px solid rgb(80, 39, 39);
+        background: rgba(216, 108, 108, 0.5);
+        padding: 2%;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+        margin-left: 1%;
+        cursor: pointer;
+      }
+      
+      .edit-form {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+}
