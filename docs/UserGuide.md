@@ -40,70 +40,101 @@ Refer to the [Features](#features) section for more details of each functionalit
 ## Features
 This section provides support for the features in WhatToDo?.
 
+
 ### Adding a task
 To add a task to the to-do list, type in your task into the text box which says "Add a task!" and click on the arrow button or press enter.
 
 **Before input**:
+
 ![GUI_component](images/whattodo_home)
 
 **After input**:
+
 ![after_input_task](images/add_task)
 
 **After enter**:
+
 ![added_task](images/added_task)
+
 
 ### Deleting a task
 To delete a specific task on the to-do list, click on the delete icon as outlined below. 
 Hovering over the delete icon will highlight it in red.
-<div markdown="block" class="alert alert-warning" markdown="1">
-**:warning:**
-Clicking on the delete icon will remove the task immediately. There is no undo in the current implementation of WhatToDo?.
-</div>
+
+**Warning**: Clicking on delete icon will remove the task immediately. There is not undo in the current implementation of WhatToDo?.
+
 
 **Before click**:
+
 ![delete_icon](images/delete_task)
+
 **After click**:
-![deleted_task](images/deleted_task)
+
+![deleted_task](images/whattodo_home)
 
 ### Deleting all tasks
 To delete all tasks in the to-do list, click on the **CLEAR ALL** button at the bottom of the list.
+
 **Before click**:
-![clear_all](images/delete_all_task)
+
+![clear_all](images/before_delete_all)
+
 **After click**:
-![deleted_all_tasks](images/deleted_all_task)
+
+![deleted_all_tasks](images/whattodo_home)
+
 
 ### Editing a task
 To edit a specific task on the todo-list, click on the pen icon as outlined below. You should see a text input appear where you can edit the task description of the specific task. You will also see two buttons **Save** and **Cancel** beside the text input.
+
 To save your changes, click the **Save** button.
+
 To cancel your changes or cancel editing, click the **Cancel** button.
 
-<div markdown="block" class="alert alert-warning" markdown="1">
-**:warning:**
-As a task cannot have no description, deleting the task description and pressing Save will not save the changes made. To delete the task, click on the delete icon instead.
-</div>
+**Warning**: As a task cannot have no description, deleting the task description and pressing Save will not save the changes made. To delete the task, click on the delete icon instead.
 
 ![edit_icon](images/edit_icon)
 
 **After clicking edit icon**:
+
 ![after_edit_icon](images/after_edit_icon)
 
 **After entering input**:
+
 ![after_input_edit](images/after_input_edit)
 
 Either save:
 **After clicking Save**:
+
 ![after_edit_save](images/after_edit_save)
 
 Or cancel:
 **After clicking Cancel**:
-![after_edit_cancel](images/after_edit_cancel)
+![after_edit_cancel](images/before_delete_all)
+
 
 ### Marking a task as complete
 To mark a task as complete, click on the circle checkbox beside the task description.
 Clicking on it will turn it green and strike through the task description.
 
 **Before clicking checkbox**:
-![before_complete](images/before_complete)
+
+![before_complete](images/checkbox_icon)
+
 **After clicking checkbox**:
+
 ![after_complete](images/after_complete)
+
+
+### Adding an image to a task
+To add an image to a specific task, click on the image icon. Then, choose your image file to display.
+
+![image_icon](images/image_icon)
+
+**Choose your image**:
+
+![image_choose](images/choose_image)
+
+**After image uploaded**:
+![image_uploaded](images/image_uploaded)
 
