@@ -10,14 +10,14 @@ title: User Guide
 --------------------------------------------------------------------------------------------------------------------
 ## Introduction
 
-### WhatToDo?’s User Guide
+### WhatToDo’s User Guide
 
 This user guide introduces to-do list web application, WhatToDo?,
 and provides support for the usage of its functionalities.
 
-### About WhatToDo?
+### About WhatToDo
 
-WhatToDo? is a **to-do list application** to help you keep track of tasks to do.
+WhatToDo is a **to-do list application** to help you keep track of tasks to do.
 It **optimizes planning and organization of tasks** including **editing tasks, adding images and marking task completion** with a simple and clean graphical user interface (GUI).
 
 --------------------------------------------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ This is what you will see when you first enter the site:
 ![GUI_component](images/whattodo_home.png)
 
 
-The functionalities available in the current version of WhatToDo? are: 
+The functionalities available in the current version of WhatToDo are: 
 1. Adding tasks
 2. Deleting tasks
 3. Editing tasks
@@ -39,7 +39,7 @@ The functionalities available in the current version of WhatToDo? are:
 Refer to the [Features](#features) section for more details of each functionality.
 
 ## Features
-This section provides support for the features in WhatToDo?.
+This section provides support for the features in WhatToDo.
 
 
 ### Adding a task
@@ -94,7 +94,7 @@ To cancel your changes or cancel editing, click the **Cancel** button.
 
 **Warning**: As a task cannot have no description, deleting the task description and pressing Save will not save the changes made. To delete the task, click on the delete icon instead.
 
-![edit_icon](../images/edit_icon.png)
+![edit_icon](images/edit_icon.png)
 
 **After clicking edit icon**:
 
@@ -108,7 +108,7 @@ Either save:
 
 **After clicking Save**
 
-![after_edit_save](images/after_edit_save)
+![after_edit_save](images/after_edit_save.png)
 
 Or cancel:
 **After clicking Cancel**
