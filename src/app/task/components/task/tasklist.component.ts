@@ -120,6 +120,7 @@ export class TaskListComponent implements OnInit {
           changes: { imageUrl: this.imgAsDataUrl.shift() }
         }
         this.store.dispatch(TaskActions.editTask({edit: taskWithImage}));
+        window.location.reload();
       }
 
       reader.readAsDataURL(event.target.files[0]);
