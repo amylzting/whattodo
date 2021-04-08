@@ -25,7 +25,8 @@ It **optimizes planning and organization of tasks** including **editing tasks, a
 To get started using WhatToDo?, simply head to the [WhatToDo? site](https://amylzting.github.io/whattodo/).
 
 This is what you will see when you first enter the site:
-![GUI_component](../images/whattodo_home)
+![GUI_component](images/whattodo_home.png)
+
 
 The functionalities available in the current version of WhatToDo? are: 
 1. Adding tasks
@@ -46,15 +47,15 @@ To add a task to the to-do list, type in your task into the text box which says 
 
 **Before input**:
 
-![GUI_component](images/whattodo_home)
+![GUI_component](images/whattodo_home.png)
 
 **After input**:
 
-![after_input_task](images/add_task)
+![after_input_task](images/add_task.png)
 
 **After enter**:
 
-![added_task](images/added_task)
+![added_task](images/added_task.png)
 
 
 ### Deleting a task
@@ -66,22 +67,22 @@ Hovering over the delete icon will highlight it in red.
 
 **Before click**:
 
-![delete_icon](images/delete_task)
+![delete_icon](images/delete_task.png)
 
 **After click**:
 
-![deleted_task](images/whattodo_home)
+![deleted_task](images/whattodo_home.png)
 
 ### Deleting all tasks
 To delete all tasks in the to-do list, click on the **CLEAR ALL** button at the bottom of the list.
 
 **Before click**:
 
-![clear_all](images/before_delete_all)
+![clear_all](images/before_delete_all.png)
 
 **After click**:
 
-![deleted_all_tasks](images/whattodo_home)
+![deleted_all_tasks](images/whattodo_home.png)
 
 
 ### Editing a task
@@ -93,24 +94,26 @@ To cancel your changes or cancel editing, click the **Cancel** button.
 
 **Warning**: As a task cannot have no description, deleting the task description and pressing Save will not save the changes made. To delete the task, click on the delete icon instead.
 
-![edit_icon](images/edit_icon)
+![edit_icon](../images/edit_icon.png)
 
 **After clicking edit icon**:
 
-![after_edit_icon](images/after_edit_icon)
+![after_edit_icon](images/after_edit_icon.png)
 
 **After entering input**:
 
-![after_input_edit](images/after_input_edit)
+![after_input_edit](images/after_input_edit.png)
 
 Either save:
-**After clicking Save**:
+
+**After clicking Save**
 
 ![after_edit_save](images/after_edit_save)
 
 Or cancel:
-**After clicking Cancel**:
-![after_edit_cancel](images/before_delete_all)
+**After clicking Cancel**
+
+![after_edit_cancel](images/before_delete_all.png)
 
 
 ### Marking a task as complete
@@ -119,22 +122,23 @@ Clicking on it will turn it green and strike through the task description.
 
 **Before clicking checkbox**:
 
-![before_complete](images/checkbox_icon)
+![before_complete](images/checkbox_icon.png)
 
 **After clicking checkbox**:
 
-![after_complete](images/after_complete)
+![after_complete](images/after_complete.png)
 
 
 ### Adding an image to a task
 To add an image to a specific task, click on the image icon. Then, choose your image file to display.
 
-![image_icon](images/image_icon)
+![image_icon](images/image_icon.png)
 
 **Choose your image**:
 
-![image_choose](images/choose_image)
+![image_choose](images/choose_image.png)
 
 **After image uploaded**:
-![image_uploaded](images/image_uploaded)
+
+![image_uploaded](images/image_uploaded.png)
 
