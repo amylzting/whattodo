@@ -12,17 +12,17 @@ title: User Guide
 
 ### WhatToDo’s User Guide
 
-This user guide introduces to-do list web application, WhatToDo?,
+This user guide introduces to-do list web application, WhatToDo,
 and provides support for the usage of its functionalities.
 
 ### About WhatToDo
 
-WhatToDo is a **to-do list application** to help you keep track of tasks to do.
+**WhatToDo** is a **to-do list application** to help you keep track of tasks to do.
 It **optimizes planning and organization of tasks** including **editing tasks, adding images and marking task completion** with a simple and clean graphical user interface (GUI).
 
 --------------------------------------------------------------------------------------------------------------------
 ## Quick start
-To get started using WhatToDo?, simply head to the [WhatToDo? site](https://amylzting.github.io/whattodo/).
+To get started using WhatToDo, simply head to the [website](https://amylzting.github.io/whattodo/).
 
 This is what you will see when you first enter the site:
 ![GUI_component](images/whattodo_home.png)
@@ -62,7 +62,7 @@ To add a task to the to-do list, type in your task into the text box which says 
 To delete a specific task on the to-do list, click on the delete icon as outlined below. 
 Hovering over the delete icon will highlight it in red.
 
-**Warning**: Clicking on delete icon will remove the task immediately. There is not undo in the current implementation of WhatToDo?.
+**Warning**: Clicking on delete icon will remove the task immediately. There is not undo in the current implementation of WhatToDo.
 
 
 **Before click**:
